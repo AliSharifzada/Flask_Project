@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.name }}{% endblock %}
+
+{% block content %}
+
+<div class="container " style="padding: 20px;">
+    <h1 class=" mb-4"><p style="color:#D19C97">Profile of {{ user.name }}</p> </h1>
+    <div class="profile-container" style="display: flex; align-items: flex-start; gap: 20px;">
+        <div class="profile-photo" style="flex: 0 0 auto;">
+            <!-- Kullanıcının fotoğrafı -->
+            <img src="{{ user.photo }}" alt="{{ user.name }}" style="
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            display: inline-block;
+        ">
+        </div>
+        <div class="profile-info  mb-4" style="flex: 1;">
+            <p style="margin: 5px 0  ; "><strong style="color: #D19C97;">Name:</strong > {{ user.name }}</p>
+            <p style="margin: 5px 0;"><strong style="color: #D19C97;">Email:</strong> {{ user.email }}</p>
+            <p style="margin: 5px 0;"><strong style="color: #D19C97;">Age:</strong> {{ user.age }}</p>
+            <p style="margin: 5px 0;"><strong style="color: #D19C97;">ID:</strong> {{ user.id }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .profile-container {
+            display: flex; /* Flexbox düzeni kullanımı */
+            align-items: center; /* Fotoğraf ve metinlerin ortalanması */
+            padding: 20px; /* İç boşluk */
+            border: 1px solid #ddd; /* Kenarlık */
+            border-radius: 10px; /* Köşe yuvarlama */
+            background-color: #f9f9f9; /* Arka plan rengi */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+        }
+        .profile-photo {
+            margin-right: 20px; /* Fotoğraf ile metin arasındaki boşluk */
+        }
+        .profile-photo img {
+            width: 150px; /* Fotoğraf genişliği */
+            height: 150px; /* Fotoğraf yüksekliği */
+            border-radius: 50%; /* Daire şeklinde fotoğraf */
+            object-fit: cover; /* Fotoğrafın kapsayıcıya uygun şekilde görünmesini sağlar */
+            border: 2px solid #ddd; /* Fotoğraf kenarlığı */
+        }
+
+        .profile-details p {
+            margin: 5px 0; /* Paragraflar arasındaki boşluk */
+            font-size: 16px; /* Yazı boyutu */
+            color: #333; /* Yazı rengi */
+        }
+
+        .container {
+            max-width: 900px; /* Maksimum genişlik */
+            margin: 0 auto; /* Ortalamak için */
+        }
+    </style>
+{% endblock %}

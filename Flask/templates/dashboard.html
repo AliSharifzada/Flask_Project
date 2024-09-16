@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Dashboard</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Dashboard Start -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Dashboard Overview</span></h2>
+        </div>
+        <div class="row">
+            <!-- Example Card 1 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Users</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ total_users }}</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Example Card 2 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Products</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ total_products }}</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Example Card 3 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Sales</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ total_sales }}</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Example Card 4 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Discounts</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ total_discounts }}</h6>
+                        <a href="#" class="card-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+{% endblock %}

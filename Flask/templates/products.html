@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Product List</h1>
+    <div>
+        <h2>Categories</h2>
+        <ul>
+            {% for category in categories %}
+                <!-- Düzgün endpoint adını kullanın -->
+                <li><a href="{{ url_for('product_details') }}?category={{ category }}">{{ category }} ({{ category_counts[category] }})</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Products</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{{ url_for('product_details', product_id=product.id) }}">
+                    {{ product.name }} - {{ product.price }} {% if product.discounted_price %} (Discounted: {{ product.discounted_price }}) {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
